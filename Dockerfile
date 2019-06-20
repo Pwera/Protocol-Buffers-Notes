@@ -17,6 +17,9 @@ RUN wget https://dl.google.com/go/go1.12.6.linux-amd64.tar.gz && tar -xzf go1.12
 ENV GOROOT=/go
 ENV GOPATH=/root/src
 
-RUN cd $HOME && mkdir src && export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+RUN cd $HOME && mkdir src && cd src && mkdir go && mkdir cpp && mkdir java
 
-RUN go get github.com/golang/protobuf/protoc-gen-go && go install github.com/golang/protobuf/protoc-gen-go
+RUN go get github.com/golang/protobuf/protoc-gen-go && go install github.com/golang/protobuf/protoc-gen-go && cp $GOPATH/bin/protoc-gen-go /usr/local/bin
+
+#protoc --plugin=/usr/local/bin/protoc-gen-go 1-scalar-types.proto --go_out=src/go
+# && export PATH=$GOPATH/bin:$GOROOT/bin:$PATH

@@ -1,0 +1,1 @@
+sudo docker image build . -t protocbuf && sudo docker container run -v /home/uzytkownik/Code/code/1-basics-part-i:/root -it --rm protocbuf bash
