@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package me.piotr.wera;
+
+import "ContextEnum.proto";
+
+message MyMessage{
+    string name = 1;
+    me.piotr.wera.ContextEnum context = 2;
+    repeated int32 numbers = 3;
+}
+

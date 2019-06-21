@@ -21,5 +21,4 @@ RUN cd $HOME && mkdir src && cd src && mkdir go && mkdir cpp && mkdir java
 
 RUN go get github.com/golang/protobuf/protoc-gen-go && go install github.com/golang/protobuf/protoc-gen-go && cp $GOPATH/bin/protoc-gen-go /usr/local/bin
 
-#protoc --plugin=/usr/local/bin/protoc-gen-go 1-scalar-types.proto --go_out=src/go
-# && export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+RUN wget https://gist.githubusercontent.com/Pwera/6e2a4d5a40025c423d9ae1cbdec320fd/raw/4ace2c4587de90f33b5ad58d1644828aa34885e0/script.sh --directory-prefix=/root

@@ -57,6 +57,8 @@ Field numbers cannot be greater than 536870911.
 Tags from 19000 - 19999 are google reserved
 Tags numbered from 1 - 15 use 1 byte in space, use them for frequently populated fields
 Tags numbeder from 16 - 2047 use 2 bytes in space. 
+Repeated fields, list or aray concept
+
 
 
 ## Authors
@@ -66,8 +68,4 @@ Tags numbeder from 16 - 2047 use 2 bytes in space.
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* [...]
 

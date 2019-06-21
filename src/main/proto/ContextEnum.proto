@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package me.piotr.wera;
+
+enum ContextEnum{
+    UNDEFINEX = 0;
+    GOOD = 1;
+    BAD = 2;
+}
+

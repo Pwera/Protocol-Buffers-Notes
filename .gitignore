@@ -1,0 +1,6 @@
+.idea
+gradle/*
+f.data
+.gradle
+build/
+out/
