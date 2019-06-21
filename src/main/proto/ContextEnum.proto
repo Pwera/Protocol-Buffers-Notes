@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package me.piotr.wera;
+package me.piotr.wera.context;
 
 enum ContextEnum{
     UNDEFINEX = 0;
