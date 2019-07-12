@@ -6,3 +6,8 @@ build/
 out/
 cmake-build-debug/
 cmake-build-release/
+src/main/go/Protocol-Buffers-Notes
+
+src/main/go/go\.sum
+
+src/main/go/go\.mod
