@@ -92,7 +92,9 @@ const char descriptor_table_protodef_MyMessage_2eproto[] PROTOBUF_SECTION_VARIAB
   "\n\017MyMessage.proto\022\rme.piotr.wera\"*\n\tMyMe"
   "ssage\022\014\n\004name\030\001 \001(\t\022\017\n\007numbers\030\002 \003(\005\">\n\020"
   "MyMessageWrapper\022*\n\010messages\030\001 \003(\0132\030.me."
-  "piotr.wera.MyMessageb\006proto3"
+  "piotr.wera.MyMessageBIZGgithub.com/Pwera"
+  "/Protocol-Buffers-Notes/src/main/generat"
+  "ed/go/MyMessageb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_MyMessage_2eproto_deps[1] = {
 };
@@ -103,7 +105,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_MyM
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_MyMessage_2eproto_once;
 static bool descriptor_table_MyMessage_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_MyMessage_2eproto = {
-  &descriptor_table_MyMessage_2eproto_initialized, descriptor_table_protodef_MyMessage_2eproto, "MyMessage.proto", 148,
+  &descriptor_table_MyMessage_2eproto_initialized, descriptor_table_protodef_MyMessage_2eproto, "MyMessage.proto", 223,
   &descriptor_table_MyMessage_2eproto_once, descriptor_table_MyMessage_2eproto_sccs, descriptor_table_MyMessage_2eproto_deps, 2, 0,
   schemas, file_default_instances, TableStruct_MyMessage_2eproto::offsets,
   file_level_metadata_MyMessage_2eproto, 2, file_level_enum_descriptors_MyMessage_2eproto, file_level_service_descriptors_MyMessage_2eproto,

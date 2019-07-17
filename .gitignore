@@ -11,3 +11,5 @@ src/main/go/Protocol-Buffers-Notes
 src/main/go/go\.sum
 
 src/main/go/go\.mod
+
+src/main/go/myfile\.bin

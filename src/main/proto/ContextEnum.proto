@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+option go_package = "github.com/Pwera/Protocol-Buffers-Notes/src/main/generated/go/ContextEnum";
 package me.piotr.wera.context;
 
 enum ContextEnum{

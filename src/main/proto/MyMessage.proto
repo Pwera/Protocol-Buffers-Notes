@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+option go_package = "github.com/Pwera/Protocol-Buffers-Notes/src/main/generated/go/MyMessage";
 package me.piotr.wera;
 
 message MyMessage {
