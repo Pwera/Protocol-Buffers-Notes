@@ -71,6 +71,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_MyMessage_2eproto::offsets[] P
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::me::piotr::wera::MyMessage, name_),
   PROTOBUF_FIELD_OFFSET(::me::piotr::wera::MyMessage, numbers_),
+  PROTOBUF_FIELD_OFFSET(::me::piotr::wera::MyMessage, contextenum_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::me::piotr::wera::MyMessageWrapper, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -80,7 +81,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_MyMessage_2eproto::offsets[] P
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::me::piotr::wera::MyMessage)},
-  { 7, -1, sizeof(::me::piotr::wera::MyMessageWrapper)},
+  { 8, -1, sizeof(::me::piotr::wera::MyMessageWrapper)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -89,14 +90,17 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 };
 
 const char descriptor_table_protodef_MyMessage_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\017MyMessage.proto\022\rme.piotr.wera\"*\n\tMyMe"
-  "ssage\022\014\n\004name\030\001 \001(\t\022\017\n\007numbers\030\002 \003(\005\">\n\020"
-  "MyMessageWrapper\022*\n\010messages\030\001 \003(\0132\030.me."
-  "piotr.wera.MyMessageBIZGgithub.com/Pwera"
-  "/Protocol-Buffers-Notes/src/main/generat"
-  "ed/go/MyMessageb\006proto3"
+  "\n\017MyMessage.proto\022\rme.piotr.wera\032\021Contex"
+  "tEnum.proto\"c\n\tMyMessage\022\014\n\004name\030\001 \001(\t\022\017"
+  "\n\007numbers\030\002 \003(\005\0227\n\013contextEnum\030\003 \001(\0162\".m"
+  "e.piotr.wera.context.ContextEnum\">\n\020MyMe"
+  "ssageWrapper\022*\n\010messages\030\001 \003(\0132\030.me.piot"
+  "r.wera.MyMessageBIZGgithub.com/Pwera/Pro"
+  "tocol-Buffers-Notes/src/main/generated/g"
+  "o/MyMessageb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_MyMessage_2eproto_deps[1] = {
+  &::descriptor_table_ContextEnum_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_MyMessage_2eproto_sccs[2] = {
   &scc_info_MyMessage_MyMessage_2eproto.base,
@@ -105,8 +109,8 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_MyM
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_MyMessage_2eproto_once;
 static bool descriptor_table_MyMessage_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_MyMessage_2eproto = {
-  &descriptor_table_MyMessage_2eproto_initialized, descriptor_table_protodef_MyMessage_2eproto, "MyMessage.proto", 223,
-  &descriptor_table_MyMessage_2eproto_once, descriptor_table_MyMessage_2eproto_sccs, descriptor_table_MyMessage_2eproto_deps, 2, 0,
+  &descriptor_table_MyMessage_2eproto_initialized, descriptor_table_protodef_MyMessage_2eproto, "MyMessage.proto", 299,
+  &descriptor_table_MyMessage_2eproto_once, descriptor_table_MyMessage_2eproto_sccs, descriptor_table_MyMessage_2eproto_deps, 2, 1,
   schemas, file_default_instances, TableStruct_MyMessage_2eproto::offsets,
   file_level_metadata_MyMessage_2eproto, 2, file_level_enum_descriptors_MyMessage_2eproto, file_level_service_descriptors_MyMessage_2eproto,
 };
@@ -139,12 +143,14 @@ MyMessage::MyMessage(const MyMessage& from)
   if (!from.name().empty()) {
     name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
+  contextenum_ = from.contextenum_;
   // @@protoc_insertion_point(copy_constructor:me.piotr.wera.MyMessage)
 }
 
 void MyMessage::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_MyMessage_MyMessage_2eproto.base);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  contextenum_ = 0;
 }
 
 MyMessage::~MyMessage() {
@@ -173,6 +179,7 @@ void MyMessage::Clear() {
 
   numbers_.Clear();
   name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  contextenum_ = 0;
   _internal_metadata_.Clear();
 }
 
@@ -199,6 +206,14 @@ const char* MyMessage::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
         } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16) {
           add_numbers(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr));
           CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .me.piotr.wera.context.ContextEnum contextEnum = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+          set_contextenum(static_cast<::me::piotr::wera::context::ContextEnum>(val));
         } else goto handle_unusual;
         continue;
       default: {
@@ -262,6 +277,20 @@ bool MyMessage::MergePartialFromCodedStream(
         break;
       }
 
+      // .me.piotr.wera.context.ContextEnum contextEnum = 3;
+      case 3: {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (24 & 0xFF)) {
+          int value = 0;
+          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+                   int, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_contextenum(static_cast< ::me::piotr::wera::context::ContextEnum >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -310,6 +339,12 @@ void MyMessage::SerializeWithCachedSizes(
       this->numbers(i), output);
   }
 
+  // .me.piotr.wera.context.ContextEnum contextEnum = 3;
+  if (this->contextenum() != 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnum(
+      3, this->contextenum(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -345,6 +380,12 @@ void MyMessage::SerializeWithCachedSizes(
          target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       WriteInt32NoTagToArray(this->numbers_, target);
+  }
+
+  // .me.piotr.wera.context.ContextEnum contextEnum = 3;
+  if (this->contextenum() != 0) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      3, this->contextenum(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -390,6 +431,12 @@ size_t MyMessage::ByteSizeLong() const {
         this->name());
   }
 
+  // .me.piotr.wera.context.ContextEnum contextEnum = 3;
+  if (this->contextenum() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->contextenum());
+  }
+
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -422,6 +469,9 @@ void MyMessage::MergeFrom(const MyMessage& from) {
 
     name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
+  if (from.contextenum() != 0) {
+    set_contextenum(from.contextenum());
+  }
 }
 
 void MyMessage::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -448,6 +498,7 @@ void MyMessage::InternalSwap(MyMessage* other) {
   numbers_.InternalSwap(&other->numbers_);
   name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
+  swap(contextenum_, other->contextenum_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata MyMessage::GetMetadata() const {

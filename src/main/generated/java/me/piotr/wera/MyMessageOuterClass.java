@@ -40,6 +40,15 @@ public final class MyMessageOuterClass {
      * <code>repeated int32 numbers = 2;</code>
      */
     int getNumbers(int index);
+
+    /**
+     * <code>.me.piotr.wera.context.ContextEnum contextEnum = 3;</code>
+     */
+    int getContextEnumValue();
+    /**
+     * <code>.me.piotr.wera.context.ContextEnum contextEnum = 3;</code>
+     */
+    me.piotr.wera.context.ContextEnumOuterClass.ContextEnum getContextEnum();
   }
   /**
    * Protobuf type {@code me.piotr.wera.MyMessage}
@@ -56,6 +65,7 @@ public final class MyMessageOuterClass {
     private MyMessage() {
       name_ = "";
       numbers_ = emptyIntList();
+      contextEnum_ = 0;
     }
 
     @java.lang.Override
@@ -114,6 +124,12 @@ public final class MyMessageOuterClass {
                 numbers_.addInt(input.readInt32());
               }
               input.popLimit(limit);
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+
+              contextEnum_ = rawValue;
               break;
             }
             default: {
@@ -208,6 +224,23 @@ public final class MyMessageOuterClass {
     }
     private int numbersMemoizedSerializedSize = -1;
 
+    public static final int CONTEXTENUM_FIELD_NUMBER = 3;
+    private int contextEnum_;
+    /**
+     * <code>.me.piotr.wera.context.ContextEnum contextEnum = 3;</code>
+     */
+    public int getContextEnumValue() {
+      return contextEnum_;
+    }
+    /**
+     * <code>.me.piotr.wera.context.ContextEnum contextEnum = 3;</code>
+     */
+    public me.piotr.wera.context.ContextEnumOuterClass.ContextEnum getContextEnum() {
+      @SuppressWarnings("deprecation")
+      me.piotr.wera.context.ContextEnumOuterClass.ContextEnum result = me.piotr.wera.context.ContextEnumOuterClass.ContextEnum.valueOf(contextEnum_);
+      return result == null ? me.piotr.wera.context.ContextEnumOuterClass.ContextEnum.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -232,6 +265,9 @@ public final class MyMessageOuterClass {
       }
       for (int i = 0; i < numbers_.size(); i++) {
         output.writeInt32NoTag(numbers_.getInt(i));
+      }
+      if (contextEnum_ != me.piotr.wera.context.ContextEnumOuterClass.ContextEnum.UNDEFINEX.getNumber()) {
+        output.writeEnum(3, contextEnum_);
       }
       unknownFields.writeTo(output);
     }
@@ -259,6 +295,10 @@ public final class MyMessageOuterClass {
         }
         numbersMemoizedSerializedSize = dataSize;
       }
+      if (contextEnum_ != me.piotr.wera.context.ContextEnumOuterClass.ContextEnum.UNDEFINEX.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, contextEnum_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -278,6 +318,7 @@ public final class MyMessageOuterClass {
           .equals(other.getName())) return false;
       if (!getNumbersList()
           .equals(other.getNumbersList())) return false;
+      if (contextEnum_ != other.contextEnum_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -295,6 +336,8 @@ public final class MyMessageOuterClass {
         hash = (37 * hash) + NUMBERS_FIELD_NUMBER;
         hash = (53 * hash) + getNumbersList().hashCode();
       }
+      hash = (37 * hash) + CONTEXTENUM_FIELD_NUMBER;
+      hash = (53 * hash) + contextEnum_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -432,6 +475,8 @@ public final class MyMessageOuterClass {
 
         numbers_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        contextEnum_ = 0;
+
         return this;
       }
 
@@ -465,6 +510,7 @@ public final class MyMessageOuterClass {
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.numbers_ = numbers_;
+        result.contextEnum_ = contextEnum_;
         onBuilt();
         return result;
       }
@@ -526,6 +572,9 @@ public final class MyMessageOuterClass {
             numbers_.addAll(other.numbers_);
           }
           onChanged();
+        }
+        if (other.contextEnum_ != 0) {
+          setContextEnumValue(other.getContextEnumValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -689,6 +738,51 @@ public final class MyMessageOuterClass {
       public Builder clearNumbers() {
         numbers_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private int contextEnum_ = 0;
+      /**
+       * <code>.me.piotr.wera.context.ContextEnum contextEnum = 3;</code>
+       */
+      public int getContextEnumValue() {
+        return contextEnum_;
+      }
+      /**
+       * <code>.me.piotr.wera.context.ContextEnum contextEnum = 3;</code>
+       */
+      public Builder setContextEnumValue(int value) {
+        contextEnum_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.me.piotr.wera.context.ContextEnum contextEnum = 3;</code>
+       */
+      public me.piotr.wera.context.ContextEnumOuterClass.ContextEnum getContextEnum() {
+        @SuppressWarnings("deprecation")
+        me.piotr.wera.context.ContextEnumOuterClass.ContextEnum result = me.piotr.wera.context.ContextEnumOuterClass.ContextEnum.valueOf(contextEnum_);
+        return result == null ? me.piotr.wera.context.ContextEnumOuterClass.ContextEnum.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.me.piotr.wera.context.ContextEnum contextEnum = 3;</code>
+       */
+      public Builder setContextEnum(me.piotr.wera.context.ContextEnumOuterClass.ContextEnum value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        contextEnum_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.me.piotr.wera.context.ContextEnum contextEnum = 3;</code>
+       */
+      public Builder clearContextEnum() {
+        
+        contextEnum_ = 0;
         onChanged();
         return this;
       }
@@ -1552,29 +1646,33 @@ public final class MyMessageOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\017MyMessage.proto\022\rme.piotr.wera\"*\n\tMyMe" +
-      "ssage\022\014\n\004name\030\001 \001(\t\022\017\n\007numbers\030\002 \003(\005\">\n\020" +
-      "MyMessageWrapper\022*\n\010messages\030\001 \003(\0132\030.me." +
-      "piotr.wera.MyMessageBIZGgithub.com/Pwera" +
-      "/Protocol-Buffers-Notes/src/main/generat" +
-      "ed/go/MyMessageb\006proto3"
+      "\n\017MyMessage.proto\022\rme.piotr.wera\032\021Contex" +
+      "tEnum.proto\"c\n\tMyMessage\022\014\n\004name\030\001 \001(\t\022\017" +
+      "\n\007numbers\030\002 \003(\005\0227\n\013contextEnum\030\003 \001(\0162\".m" +
+      "e.piotr.wera.context.ContextEnum\">\n\020MyMe" +
+      "ssageWrapper\022*\n\010messages\030\001 \003(\0132\030.me.piot" +
+      "r.wera.MyMessageBIZGgithub.com/Pwera/Pro" +
+      "tocol-Buffers-Notes/src/main/generated/g" +
+      "o/MyMessageb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          me.piotr.wera.context.ContextEnumOuterClass.getDescriptor(),
         });
     internal_static_me_piotr_wera_MyMessage_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_me_piotr_wera_MyMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_me_piotr_wera_MyMessage_descriptor,
-        new java.lang.String[] { "Name", "Numbers", });
+        new java.lang.String[] { "Name", "Numbers", "ContextEnum", });
     internal_static_me_piotr_wera_MyMessageWrapper_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_me_piotr_wera_MyMessageWrapper_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_me_piotr_wera_MyMessageWrapper_descriptor,
         new java.lang.String[] { "Messages", });
+    me.piotr.wera.context.ContextEnumOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

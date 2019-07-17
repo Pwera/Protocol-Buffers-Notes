@@ -3,9 +3,12 @@ syntax = "proto3";
 option go_package = "github.com/Pwera/Protocol-Buffers-Notes/src/main/generated/go/MyMessage";
 package me.piotr.wera;
 
+import "ContextEnum.proto";
+
 message MyMessage {
     string name = 1;
     repeated int32 numbers = 2;
+    me.piotr.wera.context.ContextEnum contextEnum = 3;
 }
 
 message MyMessageWrapper {

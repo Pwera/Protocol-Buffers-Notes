@@ -31,6 +31,7 @@ func makeMessage() *MyMessage.MyMessage{
 	message:= MyMessage.MyMessage{
 		Name:"GoLang::MyMessage",
 		Numbers: []int32{1,2,3},
+		ContextEnum: ContextEnum.ContextEnum_GOOD,
 	}
 	log.Println("MyMessage:" , message)
 	return &message
