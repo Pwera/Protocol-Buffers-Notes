@@ -42,13 +42,13 @@ public final class MyMessageOuterClass {
     int getNumbers(int index);
 
     /**
-     * <code>.me.piotr.wera.context.ContextEnum contextEnum = 3;</code>
+     * <code>.me.piotr.wera.ContextEnum context = 3;</code>
      */
-    int getContextEnumValue();
+    int getContextValue();
     /**
-     * <code>.me.piotr.wera.context.ContextEnum contextEnum = 3;</code>
+     * <code>.me.piotr.wera.ContextEnum context = 3;</code>
      */
-    me.piotr.wera.context.ContextEnumOuterClass.ContextEnum getContextEnum();
+    me.piotr.wera.ContextEnumOuterClass.ContextEnum getContext();
   }
   /**
    * Protobuf type {@code me.piotr.wera.MyMessage}
@@ -65,7 +65,7 @@ public final class MyMessageOuterClass {
     private MyMessage() {
       name_ = "";
       numbers_ = emptyIntList();
-      contextEnum_ = 0;
+      context_ = 0;
     }
 
     @java.lang.Override
@@ -129,7 +129,7 @@ public final class MyMessageOuterClass {
             case 24: {
               int rawValue = input.readEnum();
 
-              contextEnum_ = rawValue;
+              context_ = rawValue;
               break;
             }
             default: {
@@ -224,21 +224,21 @@ public final class MyMessageOuterClass {
     }
     private int numbersMemoizedSerializedSize = -1;
 
-    public static final int CONTEXTENUM_FIELD_NUMBER = 3;
-    private int contextEnum_;
+    public static final int CONTEXT_FIELD_NUMBER = 3;
+    private int context_;
     /**
-     * <code>.me.piotr.wera.context.ContextEnum contextEnum = 3;</code>
+     * <code>.me.piotr.wera.ContextEnum context = 3;</code>
      */
-    public int getContextEnumValue() {
-      return contextEnum_;
+    public int getContextValue() {
+      return context_;
     }
     /**
-     * <code>.me.piotr.wera.context.ContextEnum contextEnum = 3;</code>
+     * <code>.me.piotr.wera.ContextEnum context = 3;</code>
      */
-    public me.piotr.wera.context.ContextEnumOuterClass.ContextEnum getContextEnum() {
+    public me.piotr.wera.ContextEnumOuterClass.ContextEnum getContext() {
       @SuppressWarnings("deprecation")
-      me.piotr.wera.context.ContextEnumOuterClass.ContextEnum result = me.piotr.wera.context.ContextEnumOuterClass.ContextEnum.valueOf(contextEnum_);
-      return result == null ? me.piotr.wera.context.ContextEnumOuterClass.ContextEnum.UNRECOGNIZED : result;
+      me.piotr.wera.ContextEnumOuterClass.ContextEnum result = me.piotr.wera.ContextEnumOuterClass.ContextEnum.valueOf(context_);
+      return result == null ? me.piotr.wera.ContextEnumOuterClass.ContextEnum.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -266,8 +266,8 @@ public final class MyMessageOuterClass {
       for (int i = 0; i < numbers_.size(); i++) {
         output.writeInt32NoTag(numbers_.getInt(i));
       }
-      if (contextEnum_ != me.piotr.wera.context.ContextEnumOuterClass.ContextEnum.UNDEFINEX.getNumber()) {
-        output.writeEnum(3, contextEnum_);
+      if (context_ != me.piotr.wera.ContextEnumOuterClass.ContextEnum.UNDEFINEX.getNumber()) {
+        output.writeEnum(3, context_);
       }
       unknownFields.writeTo(output);
     }
@@ -295,9 +295,9 @@ public final class MyMessageOuterClass {
         }
         numbersMemoizedSerializedSize = dataSize;
       }
-      if (contextEnum_ != me.piotr.wera.context.ContextEnumOuterClass.ContextEnum.UNDEFINEX.getNumber()) {
+      if (context_ != me.piotr.wera.ContextEnumOuterClass.ContextEnum.UNDEFINEX.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, contextEnum_);
+          .computeEnumSize(3, context_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -318,7 +318,7 @@ public final class MyMessageOuterClass {
           .equals(other.getName())) return false;
       if (!getNumbersList()
           .equals(other.getNumbersList())) return false;
-      if (contextEnum_ != other.contextEnum_) return false;
+      if (context_ != other.context_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -336,8 +336,8 @@ public final class MyMessageOuterClass {
         hash = (37 * hash) + NUMBERS_FIELD_NUMBER;
         hash = (53 * hash) + getNumbersList().hashCode();
       }
-      hash = (37 * hash) + CONTEXTENUM_FIELD_NUMBER;
-      hash = (53 * hash) + contextEnum_;
+      hash = (37 * hash) + CONTEXT_FIELD_NUMBER;
+      hash = (53 * hash) + context_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -475,7 +475,7 @@ public final class MyMessageOuterClass {
 
         numbers_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        contextEnum_ = 0;
+        context_ = 0;
 
         return this;
       }
@@ -510,7 +510,7 @@ public final class MyMessageOuterClass {
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.numbers_ = numbers_;
-        result.contextEnum_ = contextEnum_;
+        result.context_ = context_;
         onBuilt();
         return result;
       }
@@ -573,8 +573,8 @@ public final class MyMessageOuterClass {
           }
           onChanged();
         }
-        if (other.contextEnum_ != 0) {
-          setContextEnumValue(other.getContextEnumValue());
+        if (other.context_ != 0) {
+          setContextValue(other.getContextValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -742,47 +742,47 @@ public final class MyMessageOuterClass {
         return this;
       }
 
-      private int contextEnum_ = 0;
+      private int context_ = 0;
       /**
-       * <code>.me.piotr.wera.context.ContextEnum contextEnum = 3;</code>
+       * <code>.me.piotr.wera.ContextEnum context = 3;</code>
        */
-      public int getContextEnumValue() {
-        return contextEnum_;
+      public int getContextValue() {
+        return context_;
       }
       /**
-       * <code>.me.piotr.wera.context.ContextEnum contextEnum = 3;</code>
+       * <code>.me.piotr.wera.ContextEnum context = 3;</code>
        */
-      public Builder setContextEnumValue(int value) {
-        contextEnum_ = value;
+      public Builder setContextValue(int value) {
+        context_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>.me.piotr.wera.context.ContextEnum contextEnum = 3;</code>
+       * <code>.me.piotr.wera.ContextEnum context = 3;</code>
        */
-      public me.piotr.wera.context.ContextEnumOuterClass.ContextEnum getContextEnum() {
+      public me.piotr.wera.ContextEnumOuterClass.ContextEnum getContext() {
         @SuppressWarnings("deprecation")
-        me.piotr.wera.context.ContextEnumOuterClass.ContextEnum result = me.piotr.wera.context.ContextEnumOuterClass.ContextEnum.valueOf(contextEnum_);
-        return result == null ? me.piotr.wera.context.ContextEnumOuterClass.ContextEnum.UNRECOGNIZED : result;
+        me.piotr.wera.ContextEnumOuterClass.ContextEnum result = me.piotr.wera.ContextEnumOuterClass.ContextEnum.valueOf(context_);
+        return result == null ? me.piotr.wera.ContextEnumOuterClass.ContextEnum.UNRECOGNIZED : result;
       }
       /**
-       * <code>.me.piotr.wera.context.ContextEnum contextEnum = 3;</code>
+       * <code>.me.piotr.wera.ContextEnum context = 3;</code>
        */
-      public Builder setContextEnum(me.piotr.wera.context.ContextEnumOuterClass.ContextEnum value) {
+      public Builder setContext(me.piotr.wera.ContextEnumOuterClass.ContextEnum value) {
         if (value == null) {
           throw new NullPointerException();
         }
         
-        contextEnum_ = value.getNumber();
+        context_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
-       * <code>.me.piotr.wera.context.ContextEnum contextEnum = 3;</code>
+       * <code>.me.piotr.wera.ContextEnum context = 3;</code>
        */
-      public Builder clearContextEnum() {
+      public Builder clearContext() {
         
-        contextEnum_ = 0;
+        context_ = 0;
         onChanged();
         return this;
       }
@@ -1647,32 +1647,30 @@ public final class MyMessageOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\017MyMessage.proto\022\rme.piotr.wera\032\021Contex" +
-      "tEnum.proto\"c\n\tMyMessage\022\014\n\004name\030\001 \001(\t\022\017" +
-      "\n\007numbers\030\002 \003(\005\0227\n\013contextEnum\030\003 \001(\0162\".m" +
-      "e.piotr.wera.context.ContextEnum\">\n\020MyMe" +
-      "ssageWrapper\022*\n\010messages\030\001 \003(\0132\030.me.piot" +
-      "r.wera.MyMessageBIZGgithub.com/Pwera/Pro" +
-      "tocol-Buffers-Notes/src/main/generated/g" +
-      "o/MyMessageb\006proto3"
+      "tEnum.proto\"W\n\tMyMessage\022\014\n\004name\030\001 \001(\t\022\017" +
+      "\n\007numbers\030\002 \003(\005\022+\n\007context\030\003 \001(\0162\032.me.pi" +
+      "otr.wera.ContextEnum\">\n\020MyMessageWrapper" +
+      "\022*\n\010messages\030\001 \003(\0132\030.me.piotr.wera.MyMes" +
+      "sageb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          me.piotr.wera.context.ContextEnumOuterClass.getDescriptor(),
+          me.piotr.wera.ContextEnumOuterClass.getDescriptor(),
         });
     internal_static_me_piotr_wera_MyMessage_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_me_piotr_wera_MyMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_me_piotr_wera_MyMessage_descriptor,
-        new java.lang.String[] { "Name", "Numbers", "ContextEnum", });
+        new java.lang.String[] { "Name", "Numbers", "Context", });
     internal_static_me_piotr_wera_MyMessageWrapper_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_me_piotr_wera_MyMessageWrapper_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_me_piotr_wera_MyMessageWrapper_descriptor,
         new java.lang.String[] { "Messages", });
-    me.piotr.wera.context.ContextEnumOuterClass.getDescriptor();
+    me.piotr.wera.ContextEnumOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

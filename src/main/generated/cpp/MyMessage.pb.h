@@ -192,7 +192,7 @@ class MyMessage :
   enum : int {
     kNumbersFieldNumber = 2,
     kNameFieldNumber = 1,
-    kContextEnumFieldNumber = 3,
+    kContextFieldNumber = 3,
   };
   // repeated int32 numbers = 2;
   int numbers_size() const;
@@ -216,10 +216,10 @@ class MyMessage :
   std::string* release_name();
   void set_allocated_name(std::string* name);
 
-  // .me.piotr.wera.context.ContextEnum contextEnum = 3;
-  void clear_contextenum();
-  ::me::piotr::wera::context::ContextEnum contextenum() const;
-  void set_contextenum(::me::piotr::wera::context::ContextEnum value);
+  // .me.piotr.wera.ContextEnum context = 3;
+  void clear_context();
+  ::me::piotr::wera::ContextEnum context() const;
+  void set_context(::me::piotr::wera::ContextEnum value);
 
   // @@protoc_insertion_point(class_scope:me.piotr.wera.MyMessage)
  private:
@@ -229,7 +229,7 @@ class MyMessage :
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 > numbers_;
   mutable std::atomic<int> _numbers_cached_byte_size_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
-  int contextenum_;
+  int context_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_MyMessage_2eproto;
 };
@@ -462,18 +462,18 @@ MyMessage::mutable_numbers() {
   return &numbers_;
 }
 
-// .me.piotr.wera.context.ContextEnum contextEnum = 3;
-inline void MyMessage::clear_contextenum() {
-  contextenum_ = 0;
+// .me.piotr.wera.ContextEnum context = 3;
+inline void MyMessage::clear_context() {
+  context_ = 0;
 }
-inline ::me::piotr::wera::context::ContextEnum MyMessage::contextenum() const {
-  // @@protoc_insertion_point(field_get:me.piotr.wera.MyMessage.contextEnum)
-  return static_cast< ::me::piotr::wera::context::ContextEnum >(contextenum_);
+inline ::me::piotr::wera::ContextEnum MyMessage::context() const {
+  // @@protoc_insertion_point(field_get:me.piotr.wera.MyMessage.context)
+  return static_cast< ::me::piotr::wera::ContextEnum >(context_);
 }
-inline void MyMessage::set_contextenum(::me::piotr::wera::context::ContextEnum value) {
+inline void MyMessage::set_context(::me::piotr::wera::ContextEnum value) {
   
-  contextenum_ = value;
-  // @@protoc_insertion_point(field_set:me.piotr.wera.MyMessage.contextEnum)
+  context_ = value;
+  // @@protoc_insertion_point(field_set:me.piotr.wera.MyMessage.context)
 }
 
 // -------------------------------------------------------------------

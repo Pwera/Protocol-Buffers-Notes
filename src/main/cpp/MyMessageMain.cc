@@ -5,19 +5,25 @@
 #include <random>
 
 #include "MyMessage.pb.h"
+#include "ContextEnum.pb.h"
 
-using namespace std;
+using std::endl;
+using std::cerr;
+using std::cout;
+using std::fstream;
+using std::ios;
 
 using google::protobuf::util::TimeUtil;
 
-void read(const std::string& file);
-void write(const std::string& file);
+void read(const std::string &file);
+
+void write(const std::string &file);
 
 int main(int argc, char *argv[]) {
     GOOGLE_PROTOBUF_VERIFY_VERSION;
 
     if (argc != 2) {
-        cerr << "Usage:  " << argv[0] << " ADDRESS_BOOK_FILE" << endl;
+        cerr << "File:  " << argv[0] << endl;
         return -1;
     }
 
@@ -28,39 +34,38 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
-void read(const std::string& file){
+
+void read(const std::string &file) {
     me::piotr::wera::MyMessageWrapper mess;
 
-    {
-        // Read the existing address book.
-        fstream input(file, ios::in | ios::binary);
-        if (!mess.ParseFromIstream(&input)) {
-            cerr << "Failed to parse address book." << endl;
-//            return -1;
-        }
+    fstream input(file, ios::in | ios::binary);
+    if (!mess.ParseFromIstream(&input)) {
+        cerr << "Failed to parse message." << endl;
+        return;
     }
 
     for (const me::piotr::wera::MyMessage &person : mess.messages()) {
-        cout << "Person ID: " << person.numbers().size()<< endl;
+        cout << "Person ID: " << person.numbers().size() << endl;
         cout << "  Name: " << person.name() << endl;
+        cout << "  Context: " << person.context() << endl;
     }
-
 
 }
 
-void write(const std::string& file){
+void write(const std::string &file) {
     me::piotr::wera::MyMessageWrapper mess;
     std::random_device rd;
     std::mt19937 mt(rd());
     std::uniform_real_distribution<double> dist(1, 10000);
     for (int i = 0; i < 10; ++i) {
         me::piotr::wera::MyMessage *pMessage = mess.add_messages();
-        int value = dist(mt);
+        const int value = dist(mt);
         pMessage->add_numbers(value);
         pMessage->set_name("nameee ");
+        pMessage->set_context(me::piotr::wera::GOOD);
     }
-    
-    
-    fstream input(file, ios::trunc |ios::out | ios::binary);
-    mess.SerializeToOstream(&input);
+
+    fstream output(file, ios::trunc | ios::out | ios::binary);
+    mess.SerializeToOstream(&output);
+    output.close();
 }

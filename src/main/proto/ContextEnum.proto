@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-option go_package = "github.com/Pwera/Protocol-Buffers-Notes/src/main/generated/go/ContextEnum";
-package me.piotr.wera.context;
+package me.piotr.wera;
 
-enum ContextEnum{
+
+enum ContextEnum {
     UNDEFINEX = 0;
     GOOD = 1;
     BAD = 2;

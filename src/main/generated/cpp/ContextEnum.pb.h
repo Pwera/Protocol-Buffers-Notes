@@ -58,7 +58,6 @@ PROTOBUF_NAMESPACE_CLOSE
 namespace me {
 namespace piotr {
 namespace wera {
-namespace context {
 
 enum ContextEnum : int {
   UNDEFINEX = 0,
@@ -104,17 +103,16 @@ inline bool ContextEnum_Parse(
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace context
 }  // namespace wera
 }  // namespace piotr
 }  // namespace me
 
 PROTOBUF_NAMESPACE_OPEN
 
-template <> struct is_proto_enum< ::me::piotr::wera::context::ContextEnum> : ::std::true_type {};
+template <> struct is_proto_enum< ::me::piotr::wera::ContextEnum> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::me::piotr::wera::context::ContextEnum>() {
-  return ::me::piotr::wera::context::ContextEnum_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::me::piotr::wera::ContextEnum>() {
+  return ::me::piotr::wera::ContextEnum_descriptor();
 }
 
 PROTOBUF_NAMESPACE_CLOSE

@@ -18,8 +18,6 @@
 namespace me {
 namespace piotr {
 namespace wera {
-namespace context {
-}  // namespace context
 }  // namespace wera
 }  // namespace piotr
 }  // namespace me
@@ -31,11 +29,9 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema* schemas = n
 static constexpr ::PROTOBUF_NAMESPACE_ID::Message* const* file_default_instances = nullptr;
 
 const char descriptor_table_protodef_ContextEnum_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\021ContextEnum.proto\022\025me.piotr.wera.conte"
-  "xt*/\n\013ContextEnum\022\r\n\tUNDEFINEX\020\000\022\010\n\004GOOD"
-  "\020\001\022\007\n\003BAD\020\002BKZIgithub.com/Pwera/Protocol"
-  "-Buffers-Notes/src/main/generated/go/Con"
-  "textEnumb\006proto3"
+  "\n\021ContextEnum.proto\022\rme.piotr.wera*/\n\013Co"
+  "ntextEnum\022\r\n\tUNDEFINEX\020\000\022\010\n\004GOOD\020\001\022\007\n\003BA"
+  "D\020\002b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_ContextEnum_2eproto_deps[1] = {
 };
@@ -44,7 +40,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_Con
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_ContextEnum_2eproto_once;
 static bool descriptor_table_ContextEnum_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_ContextEnum_2eproto = {
-  &descriptor_table_ContextEnum_2eproto_initialized, descriptor_table_protodef_ContextEnum_2eproto, "ContextEnum.proto", 176,
+  &descriptor_table_ContextEnum_2eproto_initialized, descriptor_table_protodef_ContextEnum_2eproto, "ContextEnum.proto", 91,
   &descriptor_table_ContextEnum_2eproto_once, descriptor_table_ContextEnum_2eproto_sccs, descriptor_table_ContextEnum_2eproto_deps, 0, 0,
   schemas, file_default_instances, TableStruct_ContextEnum_2eproto::offsets,
   file_level_metadata_ContextEnum_2eproto, 0, file_level_enum_descriptors_ContextEnum_2eproto, file_level_service_descriptors_ContextEnum_2eproto,
@@ -55,7 +51,6 @@ static bool dynamic_init_dummy_ContextEnum_2eproto = (  ::PROTOBUF_NAMESPACE_ID:
 namespace me {
 namespace piotr {
 namespace wera {
-namespace context {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ContextEnum_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_ContextEnum_2eproto);
   return file_level_enum_descriptors_ContextEnum_2eproto[0];
@@ -73,7 +68,6 @@ bool ContextEnum_IsValid(int value) {
 
 
 // @@protoc_insertion_point(namespace_scope)
-}  // namespace context
 }  // namespace wera
 }  // namespace piotr
 }  // namespace me
