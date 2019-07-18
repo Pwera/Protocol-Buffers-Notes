@@ -4,22 +4,24 @@ import (
 	me_piotr_wera "github.com/Pwera/Protocol-Buffers-Notes/pb"
 	"github.com/golang/protobuf/jsonpb"
 	"github.com/golang/protobuf/proto"
+	"github.com/golang/protobuf/ptypes/timestamp"
 	"io/ioutil"
 	"log"
+)
+
+const (
+	file = "f.data"
 )
 
 func main() {
 	message := makeMessage()
 
-	writeToFile("myfile.bin", message)
+	writeToFile(file, message)
 	printProtoMessage(*message)
 
-	con := me_piotr_wera.ContextEnum_UNDEFINEX
-	log.Println("Context:", con)
-
-	message2 := &me_piotr_wera.MyMessage{}
-	readFromFile("myfile.bin", message2)
-	printProtoMessage(*message2)
+	message2 := &me_piotr_wera.MyMessageWrapper{}
+	readFromFile(file, message2)
+	printProtoMessageWrapper(*message2)
 
 	json := toJSon(message)
 	message3 := &me_piotr_wera.MyMessage{}
@@ -47,11 +49,21 @@ func makeMessageWrapper() me_piotr_wera.MyMessageWrapper {
 				Name:    "GoLang::MyMessage2",
 				Numbers: []int32{1, 1, 1, 1},
 				Context: me_piotr_wera.ContextEnum_BAD,
+				Timestamp: &timestamp.Timestamp{
+					Nanos:   10000,
+					Seconds: 2,
+				},
+				Variant: &me_piotr_wera.MyMessage_Value1{
+					Value1: "Variant1",
+				},
 			},
 			{
 				Name:    "GoLang::MyMessage3",
 				Numbers: []int32{4444},
 				Context: me_piotr_wera.ContextEnum_UNDEFINEX,
+				Variant: &me_piotr_wera.MyMessage_Value2{
+					Value2: 876543,
+				},
 			},
 		},
 	}
@@ -82,6 +94,9 @@ func readFromFile(fname string, pb proto.Message) error {
 		return err
 	}
 	return nil
+}
+func printProtoMessageWrapper(mesage me_piotr_wera.MyMessageWrapper) {
+	log.Println("MyMessage:", mesage)
 }
 func printProtoMessage(mesage me_piotr_wera.MyMessage) {
 	log.Println("MyMessage:", mesage)

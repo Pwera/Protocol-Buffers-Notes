@@ -6,6 +6,7 @@
 
 #include "MyMessage.pb.h"
 #include "ContextEnum.pb.h"
+#include "../generated/cpp/MyMessage.pb.h"
 
 using std::endl;
 using std::cerr;
@@ -48,6 +49,21 @@ void read(const std::string &file) {
         cout << "Person ID: " << person.numbers().size() << endl;
         cout << "  Name: " << person.name() << endl;
         cout << "  Context: " << person.context() << endl;
+        switch (person.variant_case()) {
+            case me::piotr::wera::MyMessage::kValue1: {
+                 const auto &val = person.value1();
+                cout << "  Variant " << val << endl;
+            }
+                break;
+            case me::piotr::wera::MyMessage::kValue2: {
+                const auto &val = person.value2();
+                cout << "  Variant " << val << endl;
+            }
+                break;
+            default:
+                cout << "  Variant [unknown] " << endl;
+                break;
+        }
     }
 
 }
@@ -61,8 +77,10 @@ void write(const std::string &file) {
         me::piotr::wera::MyMessage *pMessage = mess.add_messages();
         const int value = dist(mt);
         pMessage->add_numbers(value);
-        pMessage->set_name("nameee ");
+        pMessage->set_name("nameee );
         pMessage->set_context(me::piotr::wera::GOOD);
+        (i % 2) == 1 ? pMessage->set_value1("Variant ") : pMessage->set_value2(i);
+
     }
 
     fstream output(file, ios::trunc | ios::out | ios::binary);

@@ -49,6 +49,36 @@ public final class MyMessageOuterClass {
      * <code>.me.piotr.wera.ContextEnum context = 3;</code>
      */
     me.piotr.wera.ContextEnumOuterClass.ContextEnum getContext();
+
+    /**
+     * <code>.google.protobuf.Timestamp timestamp = 4;</code>
+     */
+    boolean hasTimestamp();
+    /**
+     * <code>.google.protobuf.Timestamp timestamp = 4;</code>
+     */
+    com.google.protobuf.Timestamp getTimestamp();
+    /**
+     * <code>.google.protobuf.Timestamp timestamp = 4;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder();
+
+    /**
+     * <code>string value1 = 5;</code>
+     */
+    java.lang.String getValue1();
+    /**
+     * <code>string value1 = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getValue1Bytes();
+
+    /**
+     * <code>int32 value2 = 6;</code>
+     */
+    int getValue2();
+
+    public me.piotr.wera.MyMessageOuterClass.MyMessage.VariantCase getVariantCase();
   }
   /**
    * Protobuf type {@code me.piotr.wera.MyMessage}
@@ -132,6 +162,30 @@ public final class MyMessageOuterClass {
               context_ = rawValue;
               break;
             }
+            case 34: {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (timestamp_ != null) {
+                subBuilder = timestamp_.toBuilder();
+              }
+              timestamp_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(timestamp_);
+                timestamp_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+              variantCase_ = 5;
+              variant_ = s;
+              break;
+            }
+            case 48: {
+              variantCase_ = 6;
+              variant_ = input.readInt32();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -165,6 +219,44 @@ public final class MyMessageOuterClass {
       return me.piotr.wera.MyMessageOuterClass.internal_static_me_piotr_wera_MyMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               me.piotr.wera.MyMessageOuterClass.MyMessage.class, me.piotr.wera.MyMessageOuterClass.MyMessage.Builder.class);
+    }
+
+    private int variantCase_ = 0;
+    private java.lang.Object variant_;
+    public enum VariantCase
+        implements com.google.protobuf.Internal.EnumLite {
+      VALUE1(5),
+      VALUE2(6),
+      VARIANT_NOT_SET(0);
+      private final int value;
+      private VariantCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static VariantCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static VariantCase forNumber(int value) {
+        switch (value) {
+          case 5: return VALUE1;
+          case 6: return VALUE2;
+          case 0: return VARIANT_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public VariantCase
+    getVariantCase() {
+      return VariantCase.forNumber(
+          variantCase_);
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
@@ -241,6 +333,81 @@ public final class MyMessageOuterClass {
       return result == null ? me.piotr.wera.ContextEnumOuterClass.ContextEnum.UNRECOGNIZED : result;
     }
 
+    public static final int TIMESTAMP_FIELD_NUMBER = 4;
+    private com.google.protobuf.Timestamp timestamp_;
+    /**
+     * <code>.google.protobuf.Timestamp timestamp = 4;</code>
+     */
+    public boolean hasTimestamp() {
+      return timestamp_ != null;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp timestamp = 4;</code>
+     */
+    public com.google.protobuf.Timestamp getTimestamp() {
+      return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp timestamp = 4;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder() {
+      return getTimestamp();
+    }
+
+    public static final int VALUE1_FIELD_NUMBER = 5;
+    /**
+     * <code>string value1 = 5;</code>
+     */
+    public java.lang.String getValue1() {
+      java.lang.Object ref = "";
+      if (variantCase_ == 5) {
+        ref = variant_;
+      }
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (variantCase_ == 5) {
+          variant_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>string value1 = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getValue1Bytes() {
+      java.lang.Object ref = "";
+      if (variantCase_ == 5) {
+        ref = variant_;
+      }
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (variantCase_ == 5) {
+          variant_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VALUE2_FIELD_NUMBER = 6;
+    /**
+     * <code>int32 value2 = 6;</code>
+     */
+    public int getValue2() {
+      if (variantCase_ == 6) {
+        return (java.lang.Integer) variant_;
+      }
+      return 0;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -268,6 +435,16 @@ public final class MyMessageOuterClass {
       }
       if (context_ != me.piotr.wera.ContextEnumOuterClass.ContextEnum.UNDEFINEX.getNumber()) {
         output.writeEnum(3, context_);
+      }
+      if (timestamp_ != null) {
+        output.writeMessage(4, getTimestamp());
+      }
+      if (variantCase_ == 5) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, variant_);
+      }
+      if (variantCase_ == 6) {
+        output.writeInt32(
+            6, (int)((java.lang.Integer) variant_));
       }
       unknownFields.writeTo(output);
     }
@@ -299,6 +476,18 @@ public final class MyMessageOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, context_);
       }
+      if (timestamp_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getTimestamp());
+      }
+      if (variantCase_ == 5) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, variant_);
+      }
+      if (variantCase_ == 6) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(
+              6, (int)((java.lang.Integer) variant_));
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -319,6 +508,24 @@ public final class MyMessageOuterClass {
       if (!getNumbersList()
           .equals(other.getNumbersList())) return false;
       if (context_ != other.context_) return false;
+      if (hasTimestamp() != other.hasTimestamp()) return false;
+      if (hasTimestamp()) {
+        if (!getTimestamp()
+            .equals(other.getTimestamp())) return false;
+      }
+      if (!getVariantCase().equals(other.getVariantCase())) return false;
+      switch (variantCase_) {
+        case 5:
+          if (!getValue1()
+              .equals(other.getValue1())) return false;
+          break;
+        case 6:
+          if (getValue2()
+              != other.getValue2()) return false;
+          break;
+        case 0:
+        default:
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -338,6 +545,22 @@ public final class MyMessageOuterClass {
       }
       hash = (37 * hash) + CONTEXT_FIELD_NUMBER;
       hash = (53 * hash) + context_;
+      if (hasTimestamp()) {
+        hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+        hash = (53 * hash) + getTimestamp().hashCode();
+      }
+      switch (variantCase_) {
+        case 5:
+          hash = (37 * hash) + VALUE1_FIELD_NUMBER;
+          hash = (53 * hash) + getValue1().hashCode();
+          break;
+        case 6:
+          hash = (37 * hash) + VALUE2_FIELD_NUMBER;
+          hash = (53 * hash) + getValue2();
+          break;
+        case 0:
+        default:
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -477,6 +700,14 @@ public final class MyMessageOuterClass {
         bitField0_ = (bitField0_ & ~0x00000001);
         context_ = 0;
 
+        if (timestampBuilder_ == null) {
+          timestamp_ = null;
+        } else {
+          timestamp_ = null;
+          timestampBuilder_ = null;
+        }
+        variantCase_ = 0;
+        variant_ = null;
         return this;
       }
 
@@ -511,6 +742,18 @@ public final class MyMessageOuterClass {
         }
         result.numbers_ = numbers_;
         result.context_ = context_;
+        if (timestampBuilder_ == null) {
+          result.timestamp_ = timestamp_;
+        } else {
+          result.timestamp_ = timestampBuilder_.build();
+        }
+        if (variantCase_ == 5) {
+          result.variant_ = variant_;
+        }
+        if (variantCase_ == 6) {
+          result.variant_ = variant_;
+        }
+        result.variantCase_ = variantCase_;
         onBuilt();
         return result;
       }
@@ -576,6 +819,24 @@ public final class MyMessageOuterClass {
         if (other.context_ != 0) {
           setContextValue(other.getContextValue());
         }
+        if (other.hasTimestamp()) {
+          mergeTimestamp(other.getTimestamp());
+        }
+        switch (other.getVariantCase()) {
+          case VALUE1: {
+            variantCase_ = 5;
+            variant_ = other.variant_;
+            onChanged();
+            break;
+          }
+          case VALUE2: {
+            setValue2(other.getValue2());
+            break;
+          }
+          case VARIANT_NOT_SET: {
+            break;
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -604,6 +865,21 @@ public final class MyMessageOuterClass {
         }
         return this;
       }
+      private int variantCase_ = 0;
+      private java.lang.Object variant_;
+      public VariantCase
+          getVariantCase() {
+        return VariantCase.forNumber(
+            variantCase_);
+      }
+
+      public Builder clearVariant() {
+        variantCase_ = 0;
+        variant_ = null;
+        onChanged();
+        return this;
+      }
+
       private int bitField0_;
 
       private java.lang.Object name_ = "";
@@ -784,6 +1060,233 @@ public final class MyMessageOuterClass {
         
         context_ = 0;
         onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp timestamp_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> timestampBuilder_;
+      /**
+       * <code>.google.protobuf.Timestamp timestamp = 4;</code>
+       */
+      public boolean hasTimestamp() {
+        return timestampBuilder_ != null || timestamp_ != null;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp timestamp = 4;</code>
+       */
+      public com.google.protobuf.Timestamp getTimestamp() {
+        if (timestampBuilder_ == null) {
+          return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
+        } else {
+          return timestampBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.Timestamp timestamp = 4;</code>
+       */
+      public Builder setTimestamp(com.google.protobuf.Timestamp value) {
+        if (timestampBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          timestamp_ = value;
+          onChanged();
+        } else {
+          timestampBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp timestamp = 4;</code>
+       */
+      public Builder setTimestamp(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (timestampBuilder_ == null) {
+          timestamp_ = builderForValue.build();
+          onChanged();
+        } else {
+          timestampBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp timestamp = 4;</code>
+       */
+      public Builder mergeTimestamp(com.google.protobuf.Timestamp value) {
+        if (timestampBuilder_ == null) {
+          if (timestamp_ != null) {
+            timestamp_ =
+              com.google.protobuf.Timestamp.newBuilder(timestamp_).mergeFrom(value).buildPartial();
+          } else {
+            timestamp_ = value;
+          }
+          onChanged();
+        } else {
+          timestampBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp timestamp = 4;</code>
+       */
+      public Builder clearTimestamp() {
+        if (timestampBuilder_ == null) {
+          timestamp_ = null;
+          onChanged();
+        } else {
+          timestamp_ = null;
+          timestampBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp timestamp = 4;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getTimestampBuilder() {
+        
+        onChanged();
+        return getTimestampFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.Timestamp timestamp = 4;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder() {
+        if (timestampBuilder_ != null) {
+          return timestampBuilder_.getMessageOrBuilder();
+        } else {
+          return timestamp_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.Timestamp timestamp = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getTimestampFieldBuilder() {
+        if (timestampBuilder_ == null) {
+          timestampBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getTimestamp(),
+                  getParentForChildren(),
+                  isClean());
+          timestamp_ = null;
+        }
+        return timestampBuilder_;
+      }
+
+      /**
+       * <code>string value1 = 5;</code>
+       */
+      public java.lang.String getValue1() {
+        java.lang.Object ref = "";
+        if (variantCase_ == 5) {
+          ref = variant_;
+        }
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (variantCase_ == 5) {
+            variant_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string value1 = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getValue1Bytes() {
+        java.lang.Object ref = "";
+        if (variantCase_ == 5) {
+          ref = variant_;
+        }
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          if (variantCase_ == 5) {
+            variant_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string value1 = 5;</code>
+       */
+      public Builder setValue1(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  variantCase_ = 5;
+        variant_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string value1 = 5;</code>
+       */
+      public Builder clearValue1() {
+        if (variantCase_ == 5) {
+          variantCase_ = 0;
+          variant_ = null;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>string value1 = 5;</code>
+       */
+      public Builder setValue1Bytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        variantCase_ = 5;
+        variant_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>int32 value2 = 6;</code>
+       */
+      public int getValue2() {
+        if (variantCase_ == 6) {
+          return (java.lang.Integer) variant_;
+        }
+        return 0;
+      }
+      /**
+       * <code>int32 value2 = 6;</code>
+       */
+      public Builder setValue2(int value) {
+        variantCase_ = 6;
+        variant_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 value2 = 6;</code>
+       */
+      public Builder clearValue2() {
+        if (variantCase_ == 6) {
+          variantCase_ = 0;
+          variant_ = null;
+          onChanged();
+        }
         return this;
       }
       @java.lang.Override
@@ -1647,23 +2150,27 @@ public final class MyMessageOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\017MyMessage.proto\022\rme.piotr.wera\032\021Contex" +
-      "tEnum.proto\"W\n\tMyMessage\022\014\n\004name\030\001 \001(\t\022\017" +
-      "\n\007numbers\030\002 \003(\005\022+\n\007context\030\003 \001(\0162\032.me.pi" +
-      "otr.wera.ContextEnum\">\n\020MyMessageWrapper" +
-      "\022*\n\010messages\030\001 \003(\0132\030.me.piotr.wera.MyMes" +
-      "sageb\006proto3"
+      "tEnum.proto\032\037google/protobuf/timestamp.p" +
+      "roto\"\265\001\n\tMyMessage\022\014\n\004name\030\001 \001(\t\022\017\n\007numb" +
+      "ers\030\002 \003(\005\022+\n\007context\030\003 \001(\0162\032.me.piotr.we" +
+      "ra.ContextEnum\022-\n\ttimestamp\030\004 \001(\0132\032.goog" +
+      "le.protobuf.Timestamp\022\020\n\006value1\030\005 \001(\tH\000\022" +
+      "\020\n\006value2\030\006 \001(\005H\000B\t\n\007variant\">\n\020MyMessag" +
+      "eWrapper\022*\n\010messages\030\001 \003(\0132\030.me.piotr.we" +
+      "ra.MyMessageb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           me.piotr.wera.ContextEnumOuterClass.getDescriptor(),
+          com.google.protobuf.TimestampProto.getDescriptor(),
         });
     internal_static_me_piotr_wera_MyMessage_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_me_piotr_wera_MyMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_me_piotr_wera_MyMessage_descriptor,
-        new java.lang.String[] { "Name", "Numbers", "Context", });
+        new java.lang.String[] { "Name", "Numbers", "Context", "Timestamp", "Value1", "Value2", "Variant", });
     internal_static_me_piotr_wera_MyMessageWrapper_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_me_piotr_wera_MyMessageWrapper_fieldAccessorTable = new
@@ -1671,6 +2178,7 @@ public final class MyMessageOuterClass {
         internal_static_me_piotr_wera_MyMessageWrapper_descriptor,
         new java.lang.String[] { "Messages", });
     me.piotr.wera.ContextEnumOuterClass.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

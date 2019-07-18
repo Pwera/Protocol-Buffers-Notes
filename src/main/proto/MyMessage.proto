@@ -2,13 +2,18 @@ syntax = "proto3";
 
 package me.piotr.wera;
 
-
 import "ContextEnum.proto";
+import "google/protobuf/timestamp.proto";
 
 message MyMessage {
     string name = 1;
     repeated int32 numbers = 2;
  	ContextEnum context = 3;
+ 	google.protobuf.Timestamp timestamp = 4;
+ 	oneof variant {
+ 		string value1 = 5;
+ 		int32 value2 = 6;
+ 	}
 }
 
 message MyMessageWrapper {

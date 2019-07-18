@@ -60,8 +60,14 @@ Some big projects like 'etcd' use PB for transporting data.
 - Tags from 19000 - 19999 are google reserved
 - Tags numbered from 1 - 15 use 1 byte in space, use them for frequently populated fields
 - Tags numbeder from 16 - 2047 use 2 bytes in space. 
-- Repeated fields, list or aray concept
-
+- Forward and backward compatible change
+- Don't change the numeric tags for any existing fields
+- With new fields, an old code will just ignore them
+- use reserved [tag_number] when removing field
+Sample: reserved 2, 15 to 19; reserved "aaa", "xyz";
+- The alternative is that instead of removing a field, you rename it to OBSOLETE_field_name
+- Do not remove any reserved tags
+- 
 
 
 ## Authors

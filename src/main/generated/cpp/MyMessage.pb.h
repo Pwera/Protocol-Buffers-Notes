@@ -33,6 +33,7 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
 #include "ContextEnum.pb.h"
+#include <google/protobuf/timestamp.pb.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_MyMessage_2eproto
@@ -113,6 +114,12 @@ class MyMessage :
   }
   static const MyMessage& default_instance();
 
+  enum VariantCase {
+    kValue1 = 5,
+    kValue2 = 6,
+    VARIANT_NOT_SET = 0,
+  };
+
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
   static inline const MyMessage* internal_default_instance() {
     return reinterpret_cast<const MyMessage*>(
@@ -192,7 +199,10 @@ class MyMessage :
   enum : int {
     kNumbersFieldNumber = 2,
     kNameFieldNumber = 1,
+    kTimestampFieldNumber = 4,
     kContextFieldNumber = 3,
+    kValue1FieldNumber = 5,
+    kValue2FieldNumber = 6,
   };
   // repeated int32 numbers = 2;
   int numbers_size() const;
@@ -216,21 +226,66 @@ class MyMessage :
   std::string* release_name();
   void set_allocated_name(std::string* name);
 
+  // .google.protobuf.Timestamp timestamp = 4;
+  bool has_timestamp() const;
+  void clear_timestamp();
+  const PROTOBUF_NAMESPACE_ID::Timestamp& timestamp() const;
+  PROTOBUF_NAMESPACE_ID::Timestamp* release_timestamp();
+  PROTOBUF_NAMESPACE_ID::Timestamp* mutable_timestamp();
+  void set_allocated_timestamp(PROTOBUF_NAMESPACE_ID::Timestamp* timestamp);
+
   // .me.piotr.wera.ContextEnum context = 3;
   void clear_context();
   ::me::piotr::wera::ContextEnum context() const;
   void set_context(::me::piotr::wera::ContextEnum value);
 
+  // string value1 = 5;
+  private:
+  bool has_value1() const;
+  public:
+  void clear_value1();
+  const std::string& value1() const;
+  void set_value1(const std::string& value);
+  void set_value1(std::string&& value);
+  void set_value1(const char* value);
+  void set_value1(const char* value, size_t size);
+  std::string* mutable_value1();
+  std::string* release_value1();
+  void set_allocated_value1(std::string* value1);
+
+  // int32 value2 = 6;
+  private:
+  bool has_value2() const;
+  public:
+  void clear_value2();
+  ::PROTOBUF_NAMESPACE_ID::int32 value2() const;
+  void set_value2(::PROTOBUF_NAMESPACE_ID::int32 value);
+
+  void clear_variant();
+  VariantCase variant_case() const;
   // @@protoc_insertion_point(class_scope:me.piotr.wera.MyMessage)
  private:
   class _Internal;
+  void set_has_value1();
+  void set_has_value2();
+
+  inline bool has_variant() const;
+  inline void clear_has_variant();
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 > numbers_;
   mutable std::atomic<int> _numbers_cached_byte_size_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  PROTOBUF_NAMESPACE_ID::Timestamp* timestamp_;
   int context_;
+  union VariantUnion {
+    VariantUnion() {}
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr value1_;
+    ::PROTOBUF_NAMESPACE_ID::int32 value2_;
+  } variant_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
+
   friend struct ::TableStruct_MyMessage_2eproto;
 };
 // -------------------------------------------------------------------
@@ -476,6 +531,180 @@ inline void MyMessage::set_context(::me::piotr::wera::ContextEnum value) {
   // @@protoc_insertion_point(field_set:me.piotr.wera.MyMessage.context)
 }
 
+// .google.protobuf.Timestamp timestamp = 4;
+inline bool MyMessage::has_timestamp() const {
+  return this != internal_default_instance() && timestamp_ != nullptr;
+}
+inline const PROTOBUF_NAMESPACE_ID::Timestamp& MyMessage::timestamp() const {
+  const PROTOBUF_NAMESPACE_ID::Timestamp* p = timestamp_;
+  // @@protoc_insertion_point(field_get:me.piotr.wera.MyMessage.timestamp)
+  return p != nullptr ? *p : *reinterpret_cast<const PROTOBUF_NAMESPACE_ID::Timestamp*>(
+      &PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline PROTOBUF_NAMESPACE_ID::Timestamp* MyMessage::release_timestamp() {
+  // @@protoc_insertion_point(field_release:me.piotr.wera.MyMessage.timestamp)
+  
+  PROTOBUF_NAMESPACE_ID::Timestamp* temp = timestamp_;
+  timestamp_ = nullptr;
+  return temp;
+}
+inline PROTOBUF_NAMESPACE_ID::Timestamp* MyMessage::mutable_timestamp() {
+  
+  if (timestamp_ == nullptr) {
+    auto* p = CreateMaybeMessage<PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaNoVirtual());
+    timestamp_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:me.piotr.wera.MyMessage.timestamp)
+  return timestamp_;
+}
+inline void MyMessage::set_allocated_timestamp(PROTOBUF_NAMESPACE_ID::Timestamp* timestamp) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(timestamp_);
+  }
+  if (timestamp) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(timestamp)->GetArena();
+    if (message_arena != submessage_arena) {
+      timestamp = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, timestamp, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  timestamp_ = timestamp;
+  // @@protoc_insertion_point(field_set_allocated:me.piotr.wera.MyMessage.timestamp)
+}
+
+// string value1 = 5;
+inline bool MyMessage::has_value1() const {
+  return variant_case() == kValue1;
+}
+inline void MyMessage::set_has_value1() {
+  _oneof_case_[0] = kValue1;
+}
+inline void MyMessage::clear_value1() {
+  if (has_value1()) {
+    variant_.value1_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+    clear_has_variant();
+  }
+}
+inline const std::string& MyMessage::value1() const {
+  // @@protoc_insertion_point(field_get:me.piotr.wera.MyMessage.value1)
+  if (has_value1()) {
+    return variant_.value1_.GetNoArena();
+  }
+  return *&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited();
+}
+inline void MyMessage::set_value1(const std::string& value) {
+  // @@protoc_insertion_point(field_set:me.piotr.wera.MyMessage.value1)
+  if (!has_value1()) {
+    clear_variant();
+    set_has_value1();
+    variant_.value1_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  variant_.value1_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:me.piotr.wera.MyMessage.value1)
+}
+inline void MyMessage::set_value1(std::string&& value) {
+  // @@protoc_insertion_point(field_set:me.piotr.wera.MyMessage.value1)
+  if (!has_value1()) {
+    clear_variant();
+    set_has_value1();
+    variant_.value1_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  variant_.value1_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:me.piotr.wera.MyMessage.value1)
+}
+inline void MyMessage::set_value1(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  if (!has_value1()) {
+    clear_variant();
+    set_has_value1();
+    variant_.value1_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  variant_.value1_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:me.piotr.wera.MyMessage.value1)
+}
+inline void MyMessage::set_value1(const char* value, size_t size) {
+  if (!has_value1()) {
+    clear_variant();
+    set_has_value1();
+    variant_.value1_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  variant_.value1_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:me.piotr.wera.MyMessage.value1)
+}
+inline std::string* MyMessage::mutable_value1() {
+  if (!has_value1()) {
+    clear_variant();
+    set_has_value1();
+    variant_.value1_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_mutable:me.piotr.wera.MyMessage.value1)
+  return variant_.value1_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* MyMessage::release_value1() {
+  // @@protoc_insertion_point(field_release:me.piotr.wera.MyMessage.value1)
+  if (has_value1()) {
+    clear_has_variant();
+    return variant_.value1_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  } else {
+    return nullptr;
+  }
+}
+inline void MyMessage::set_allocated_value1(std::string* value1) {
+  if (has_variant()) {
+    clear_variant();
+  }
+  if (value1 != nullptr) {
+    set_has_value1();
+    variant_.value1_.UnsafeSetDefault(value1);
+  }
+  // @@protoc_insertion_point(field_set_allocated:me.piotr.wera.MyMessage.value1)
+}
+
+// int32 value2 = 6;
+inline bool MyMessage::has_value2() const {
+  return variant_case() == kValue2;
+}
+inline void MyMessage::set_has_value2() {
+  _oneof_case_[0] = kValue2;
+}
+inline void MyMessage::clear_value2() {
+  if (has_value2()) {
+    variant_.value2_ = 0;
+    clear_has_variant();
+  }
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 MyMessage::value2() const {
+  // @@protoc_insertion_point(field_get:me.piotr.wera.MyMessage.value2)
+  if (has_value2()) {
+    return variant_.value2_;
+  }
+  return 0;
+}
+inline void MyMessage::set_value2(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  if (!has_value2()) {
+    clear_variant();
+    set_has_value2();
+  }
+  variant_.value2_ = value;
+  // @@protoc_insertion_point(field_set:me.piotr.wera.MyMessage.value2)
+}
+
+inline bool MyMessage::has_variant() const {
+  return variant_case() != VARIANT_NOT_SET;
+}
+inline void MyMessage::clear_has_variant() {
+  _oneof_case_[0] = VARIANT_NOT_SET;
+}
+inline MyMessage::VariantCase MyMessage::variant_case() const {
+  return MyMessage::VariantCase(_oneof_case_[0]);
+}
 // -------------------------------------------------------------------
 
 // MyMessageWrapper
