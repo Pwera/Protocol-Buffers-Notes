@@ -67,7 +67,13 @@ Some big projects like 'etcd' use PB for transporting data.
 Sample: reserved 2, 15 to 19; reserved "aaa", "xyz";
 - The alternative is that instead of removing a field, you rename it to OBSOLETE_field_name
 - Do not remove any reserved tags
-- 
+- [oneof] To use Type variant, type oneof; cannot be repeated 
+- [map] Maps can be used to map scalars to values of any type; map<string, Result> results = 2;
+- Map fields cannot be repeated
+- There's no ordering for map (it's key value store)
+- Protocol buffers can define Services on top of Messages
+- A service is a set of endpoints you application can be accessible from
+- The advantage of Services & RPC (remote procedure call) is that you can call Servcie API from any client seamlessly
 
 
 ## Authors
