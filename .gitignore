@@ -13,3 +13,5 @@ src/main/go/go\.sum
 src/main/go/go\.mod
 
 src/main/go/myfile\.bin
+src/main/generated/cpp/
+docker-compose.yml

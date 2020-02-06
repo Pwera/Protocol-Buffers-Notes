@@ -77,7 +77,7 @@ void write(const std::string &file) {
         me::piotr::wera::MyMessage *pMessage = mess.add_messages();
         const int value = dist(mt);
         pMessage->add_numbers(value);
-        pMessage->set_name("nameee );
+        pMessage->set_name("nameee");
         pMessage->set_context(me::piotr::wera::GOOD);
         (i % 2) == 1 ? pMessage->set_value1("Variant ") : pMessage->set_value2(i);
 
