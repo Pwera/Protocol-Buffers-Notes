@@ -20,42 +20,52 @@ public final class MyMessageOuterClass {
 
     /**
      * <code>string name = 1;</code>
+     * @return The name.
      */
     java.lang.String getName();
     /**
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
      * <code>repeated int32 numbers = 2;</code>
+     * @return A list containing the numbers.
      */
     java.util.List<java.lang.Integer> getNumbersList();
     /**
      * <code>repeated int32 numbers = 2;</code>
+     * @return The count of numbers.
      */
     int getNumbersCount();
     /**
      * <code>repeated int32 numbers = 2;</code>
+     * @param index The index of the element to return.
+     * @return The numbers at the given index.
      */
     int getNumbers(int index);
 
     /**
      * <code>.me.piotr.wera.ContextEnum context = 3;</code>
+     * @return The enum numeric value on the wire for context.
      */
     int getContextValue();
     /**
      * <code>.me.piotr.wera.ContextEnum context = 3;</code>
+     * @return The context.
      */
     me.piotr.wera.ContextEnumOuterClass.ContextEnum getContext();
 
     /**
      * <code>.google.protobuf.Timestamp timestamp = 4;</code>
+     * @return Whether the timestamp field is set.
      */
     boolean hasTimestamp();
     /**
      * <code>.google.protobuf.Timestamp timestamp = 4;</code>
+     * @return The timestamp.
      */
     com.google.protobuf.Timestamp getTimestamp();
     /**
@@ -65,16 +75,19 @@ public final class MyMessageOuterClass {
 
     /**
      * <code>string value1 = 5;</code>
+     * @return The value1.
      */
     java.lang.String getValue1();
     /**
      * <code>string value1 = 5;</code>
+     * @return The bytes for value1.
      */
     com.google.protobuf.ByteString
         getValue1Bytes();
 
     /**
      * <code>int32 value2 = 6;</code>
+     * @return The value2.
      */
     int getValue2();
 
@@ -224,7 +237,8 @@ public final class MyMessageOuterClass {
     private int variantCase_ = 0;
     private java.lang.Object variant_;
     public enum VariantCase
-        implements com.google.protobuf.Internal.EnumLite {
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       VALUE1(5),
       VALUE2(6),
       VARIANT_NOT_SET(0);
@@ -233,6 +247,8 @@ public final class MyMessageOuterClass {
         this.value = value;
       }
       /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -263,6 +279,7 @@ public final class MyMessageOuterClass {
     private volatile java.lang.Object name_;
     /**
      * <code>string name = 1;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -278,6 +295,7 @@ public final class MyMessageOuterClass {
     }
     /**
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -297,6 +315,7 @@ public final class MyMessageOuterClass {
     private com.google.protobuf.Internal.IntList numbers_;
     /**
      * <code>repeated int32 numbers = 2;</code>
+     * @return A list containing the numbers.
      */
     public java.util.List<java.lang.Integer>
         getNumbersList() {
@@ -304,12 +323,15 @@ public final class MyMessageOuterClass {
     }
     /**
      * <code>repeated int32 numbers = 2;</code>
+     * @return The count of numbers.
      */
     public int getNumbersCount() {
       return numbers_.size();
     }
     /**
      * <code>repeated int32 numbers = 2;</code>
+     * @param index The index of the element to return.
+     * @return The numbers at the given index.
      */
     public int getNumbers(int index) {
       return numbers_.getInt(index);
@@ -320,12 +342,14 @@ public final class MyMessageOuterClass {
     private int context_;
     /**
      * <code>.me.piotr.wera.ContextEnum context = 3;</code>
+     * @return The enum numeric value on the wire for context.
      */
     public int getContextValue() {
       return context_;
     }
     /**
      * <code>.me.piotr.wera.ContextEnum context = 3;</code>
+     * @return The context.
      */
     public me.piotr.wera.ContextEnumOuterClass.ContextEnum getContext() {
       @SuppressWarnings("deprecation")
@@ -337,12 +361,14 @@ public final class MyMessageOuterClass {
     private com.google.protobuf.Timestamp timestamp_;
     /**
      * <code>.google.protobuf.Timestamp timestamp = 4;</code>
+     * @return Whether the timestamp field is set.
      */
     public boolean hasTimestamp() {
       return timestamp_ != null;
     }
     /**
      * <code>.google.protobuf.Timestamp timestamp = 4;</code>
+     * @return The timestamp.
      */
     public com.google.protobuf.Timestamp getTimestamp() {
       return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
@@ -357,6 +383,7 @@ public final class MyMessageOuterClass {
     public static final int VALUE1_FIELD_NUMBER = 5;
     /**
      * <code>string value1 = 5;</code>
+     * @return The value1.
      */
     public java.lang.String getValue1() {
       java.lang.Object ref = "";
@@ -377,6 +404,7 @@ public final class MyMessageOuterClass {
     }
     /**
      * <code>string value1 = 5;</code>
+     * @return The bytes for value1.
      */
     public com.google.protobuf.ByteString
         getValue1Bytes() {
@@ -400,6 +428,7 @@ public final class MyMessageOuterClass {
     public static final int VALUE2_FIELD_NUMBER = 6;
     /**
      * <code>int32 value2 = 6;</code>
+     * @return The value2.
      */
     public int getValue2() {
       if (variantCase_ == 6) {
@@ -885,6 +914,7 @@ public final class MyMessageOuterClass {
       private java.lang.Object name_ = "";
       /**
        * <code>string name = 1;</code>
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -900,6 +930,7 @@ public final class MyMessageOuterClass {
       }
       /**
        * <code>string name = 1;</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -916,6 +947,8 @@ public final class MyMessageOuterClass {
       }
       /**
        * <code>string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
@@ -929,6 +962,7 @@ public final class MyMessageOuterClass {
       }
       /**
        * <code>string name = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearName() {
         
@@ -938,6 +972,8 @@ public final class MyMessageOuterClass {
       }
       /**
        * <code>string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -960,6 +996,7 @@ public final class MyMessageOuterClass {
       }
       /**
        * <code>repeated int32 numbers = 2;</code>
+       * @return A list containing the numbers.
        */
       public java.util.List<java.lang.Integer>
           getNumbersList() {
@@ -968,18 +1005,24 @@ public final class MyMessageOuterClass {
       }
       /**
        * <code>repeated int32 numbers = 2;</code>
+       * @return The count of numbers.
        */
       public int getNumbersCount() {
         return numbers_.size();
       }
       /**
        * <code>repeated int32 numbers = 2;</code>
+       * @param index The index of the element to return.
+       * @return The numbers at the given index.
        */
       public int getNumbers(int index) {
         return numbers_.getInt(index);
       }
       /**
        * <code>repeated int32 numbers = 2;</code>
+       * @param index The index to set the value at.
+       * @param value The numbers to set.
+       * @return This builder for chaining.
        */
       public Builder setNumbers(
           int index, int value) {
@@ -990,6 +1033,8 @@ public final class MyMessageOuterClass {
       }
       /**
        * <code>repeated int32 numbers = 2;</code>
+       * @param value The numbers to add.
+       * @return This builder for chaining.
        */
       public Builder addNumbers(int value) {
         ensureNumbersIsMutable();
@@ -999,6 +1044,8 @@ public final class MyMessageOuterClass {
       }
       /**
        * <code>repeated int32 numbers = 2;</code>
+       * @param values The numbers to add.
+       * @return This builder for chaining.
        */
       public Builder addAllNumbers(
           java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -1010,6 +1057,7 @@ public final class MyMessageOuterClass {
       }
       /**
        * <code>repeated int32 numbers = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearNumbers() {
         numbers_ = emptyIntList();
@@ -1021,12 +1069,15 @@ public final class MyMessageOuterClass {
       private int context_ = 0;
       /**
        * <code>.me.piotr.wera.ContextEnum context = 3;</code>
+       * @return The enum numeric value on the wire for context.
        */
       public int getContextValue() {
         return context_;
       }
       /**
        * <code>.me.piotr.wera.ContextEnum context = 3;</code>
+       * @param value The enum numeric value on the wire for context to set.
+       * @return This builder for chaining.
        */
       public Builder setContextValue(int value) {
         context_ = value;
@@ -1035,6 +1086,7 @@ public final class MyMessageOuterClass {
       }
       /**
        * <code>.me.piotr.wera.ContextEnum context = 3;</code>
+       * @return The context.
        */
       public me.piotr.wera.ContextEnumOuterClass.ContextEnum getContext() {
         @SuppressWarnings("deprecation")
@@ -1043,6 +1095,8 @@ public final class MyMessageOuterClass {
       }
       /**
        * <code>.me.piotr.wera.ContextEnum context = 3;</code>
+       * @param value The context to set.
+       * @return This builder for chaining.
        */
       public Builder setContext(me.piotr.wera.ContextEnumOuterClass.ContextEnum value) {
         if (value == null) {
@@ -1055,6 +1109,7 @@ public final class MyMessageOuterClass {
       }
       /**
        * <code>.me.piotr.wera.ContextEnum context = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearContext() {
         
@@ -1068,12 +1123,14 @@ public final class MyMessageOuterClass {
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> timestampBuilder_;
       /**
        * <code>.google.protobuf.Timestamp timestamp = 4;</code>
+       * @return Whether the timestamp field is set.
        */
       public boolean hasTimestamp() {
         return timestampBuilder_ != null || timestamp_ != null;
       }
       /**
        * <code>.google.protobuf.Timestamp timestamp = 4;</code>
+       * @return The timestamp.
        */
       public com.google.protobuf.Timestamp getTimestamp() {
         if (timestampBuilder_ == null) {
@@ -1182,6 +1239,7 @@ public final class MyMessageOuterClass {
 
       /**
        * <code>string value1 = 5;</code>
+       * @return The value1.
        */
       public java.lang.String getValue1() {
         java.lang.Object ref = "";
@@ -1202,6 +1260,7 @@ public final class MyMessageOuterClass {
       }
       /**
        * <code>string value1 = 5;</code>
+       * @return The bytes for value1.
        */
       public com.google.protobuf.ByteString
           getValue1Bytes() {
@@ -1223,6 +1282,8 @@ public final class MyMessageOuterClass {
       }
       /**
        * <code>string value1 = 5;</code>
+       * @param value The value1 to set.
+       * @return This builder for chaining.
        */
       public Builder setValue1(
           java.lang.String value) {
@@ -1236,6 +1297,7 @@ public final class MyMessageOuterClass {
       }
       /**
        * <code>string value1 = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearValue1() {
         if (variantCase_ == 5) {
@@ -1247,6 +1309,8 @@ public final class MyMessageOuterClass {
       }
       /**
        * <code>string value1 = 5;</code>
+       * @param value The bytes for value1 to set.
+       * @return This builder for chaining.
        */
       public Builder setValue1Bytes(
           com.google.protobuf.ByteString value) {
@@ -1262,6 +1326,7 @@ public final class MyMessageOuterClass {
 
       /**
        * <code>int32 value2 = 6;</code>
+       * @return The value2.
        */
       public int getValue2() {
         if (variantCase_ == 6) {
@@ -1271,6 +1336,8 @@ public final class MyMessageOuterClass {
       }
       /**
        * <code>int32 value2 = 6;</code>
+       * @param value The value2 to set.
+       * @return This builder for chaining.
        */
       public Builder setValue2(int value) {
         variantCase_ = 6;
@@ -1280,6 +1347,7 @@ public final class MyMessageOuterClass {
       }
       /**
        * <code>int32 value2 = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearValue2() {
         if (variantCase_ == 6) {

@@ -57,6 +57,8 @@ public final class ContextEnumOuterClass {
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -64,6 +66,10 @@ public final class ContextEnumOuterClass {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static ContextEnum forNumber(int value) {
       switch (value) {
         case 0: return UNDEFINEX;
