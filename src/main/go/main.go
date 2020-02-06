@@ -1,7 +1,7 @@
 package main
 
 import (
-	me_piotr_wera "github.com/Pwera/Protocol-Buffers-Notes/pb"
+	"github.com/pwera/Protocol-Buffers-Notes/pb"
 	"github.com/golang/protobuf/jsonpb"
 	"github.com/golang/protobuf/proto"
 	"github.com/golang/protobuf/ptypes/timestamp"
